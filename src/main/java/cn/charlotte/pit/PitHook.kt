@@ -86,51 +86,51 @@ object PitHook {
     /*    val gitVersion = "7a57acd"*/
 
     fun init() {
-            try {
-                NewConfiguration.loadFile()
-                NewConfiguration.load()
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-            registerActionBarManager()
-            loadEnchants()
-            loadPerks()
-            loadItems()
-            loadNameTag()
-            loadScoreBoard()
-            loadQuests()
-            loadEvents()
-            registerListeners()
-            loadRunnable()
-            registerSounds()
+        try {
+            NewConfiguration.loadFile()
+            NewConfiguration.load()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        registerActionBarManager()
+        loadEnchants()
+        loadPerks()
+        loadItems()
+        loadNameTag()
+        loadScoreBoard()
+        loadQuests()
+        loadEvents()
+        registerListeners()
+        loadRunnable()
+        registerSounds()
 
-            loadCommands()
-            loadNpcs()
-            loadAPI()
+        loadCommands()
+        loadNpcs()
+        loadAPI()
 
-            Bukkit.getPluginManager().getPlugin("PlaceholderAPI")?.let {
-                PitPapiHook.register()
-            }
+        Bukkit.getPluginManager().getPlugin("PlaceholderAPI")?.let {
+            PitPapiHook.register()
+        }
 
-            /*                val description = ThePit.getInstance().description
+        /*                val description = ThePit.getInstance().description
 
-                            val field = PluginDescriptionFile::class.java.getDeclaredField("version")
-                            field.isAccessible = true
-                            field.set(description, gitVersion)*/
+                        val field = PluginDescriptionFile::class.java.getDeclaredField("version")
+                        field.isAccessible = true
+                        field.set(description, gitVersion)*/
 
-            AddonHandler.start()
+        AddonHandler.start()
 
-            ActionBarDisplayRunnable.start()
+        ActionBarDisplayRunnable.start()
 
-            KingsQuests.enable()
+        KingsQuests.enable()
 
-            CDKData.loadAllCDKFromData()
+        CDKData.loadAllCDKFromData()
 
-            Bukkit.getPluginManager().registerEvents(SewersRunnable, ThePit.getInstance())
-            SewersRunnable.runTaskTimer(ThePit.getInstance(), 20L, 20L)
+        Bukkit.getPluginManager().registerEvents(SewersRunnable, ThePit.getInstance())
+        SewersRunnable.runTaskTimer(ThePit.getInstance(), 20L, 20L)
 
-            println("Loading complete.")
-            isLoaded = true
+        println("Loading complete.")
+        isLoaded = true
     }
 
 
@@ -360,24 +360,13 @@ object PitHook {
             SoulRipperEnchant::class.java,
             AceOfSpades::class.java,
             Brakes::class.java,
+            HappyNewYearEnchant::class.java,
+            WitheredAndPiercingThroughTheHeart::class.java,
+            LastShadowLeapForward::class.java,
+            RealManEnchant::class.java,
             BreachingChargeEnchant::class.java
         )
 
-        fun addSpecialEnchantments() {
-            val pitConfigCode = ThePit.getInstance().pitConfig.code
-
-            when (pitConfigCode) {
-                "d8157845-8e44-4c83-ab53-60bb7abc3a08", "a41a5f6e-fcdc-443c-aaa2-8eb6567863d8" -> {
-                    classes += HappyNewYearEnchant::class.java
-                    classes += WitheredAndPiercingThroughTheHeart::class.java
-                    classes += LastShadowLeapForward::class.java
-                }
-
-                "4847a648-bd9f-463e-ab18-3006b0fabd3b" -> {
-                    classes += RealManEnchant::class.java
-                }
-            }
-        }
 
         fun filterDisabledEnchantments() {
             val pitConfig = ThePit.getInstance().pitConfig
@@ -411,8 +400,6 @@ object PitHook {
                 classes.addAll(enchantmentCollection)
             }
         }
-
-        addSpecialEnchantments()
         filterDisabledEnchantments()
         addEnchantments()
 
@@ -650,7 +637,7 @@ object PitHook {
             DamagePlus::class.java,
             QuickMathEvent::class.java,
             KingOfTheHillEvent::class.java,
-   /*         SquadsEvent::class.java*/
+            /*         SquadsEvent::class.java*/
         )
 
         eventFactory.init(classes)
