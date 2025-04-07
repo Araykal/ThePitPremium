@@ -86,10 +86,6 @@ object PitHook {
     /*    val gitVersion = "7a57acd"*/
 
     fun init() {
-//        if (!WebSocketClient.connect) {
-//            WebSocketClient().connect()
-//        }
-        Bukkit.getScheduler().runTaskLater(ThePit.getInstance(), {
             try {
                 NewConfiguration.loadFile()
                 NewConfiguration.load()
@@ -135,7 +131,6 @@ object PitHook {
 
             println("Loading complete.")
             isLoaded = true
-        }, 20L)
     }
 
 

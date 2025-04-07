@@ -16,12 +16,6 @@ class GiveItemCommand : Addon {
     override fun name(): String {
         return "give_item_command"
     }
-
- /*   override fun enableList(): Set<String> {
-        return setOf(
-            "59a47104-69b5-470e-a046-6d69cbc3374d")
-    }*/
-
     override fun enable() {
         CommandHandler.registerClass(GiveItemCommandExecutor::class.java)
     }
