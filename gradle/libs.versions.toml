@@ -1,0 +1,86 @@
+[versions]
+adventure = "4.17.0"
+adventure-platform = "4.3.2"
+server_8 = "1.8.8-R0.1-SNAPSHOT"
+protocolLib = "5.1.0"
+scoreboard-library = "2.1.8"
+kotlin = "2.0.0-RC3"
+mongodb = "3.12.11"
+packetevents = "2.3.0"
+yamlassist = "1.0.5"
+gui = "2.2.2"
+shadow = "8.1.7"
+jackson = "2.17.1"
+luckperms = "5.4"
+moshi = "1.15.1"
+papi = "2.11.6"
+narshorn = "15.3"
+httpclient = "4.4"
+jedis = "2.9.0"
+book = "1.2"
+monjack = "4.8.1"
+slf4j = "1.7.30"
+websocket = "1.5.4"
+reflectionhelper = "1.15.2-SNAPSHOT"
+playerpoints = "3.2.4"
+decentholograms = "2.8.6"
+hutool = "5.8.27"
+litecommands = "3.4.1"
+[libraries]
+
+# Adventure
+adventure-api = { group = "net.kyori", name = "adventure-api", version.ref = "adventure" }
+adventure-nbt = { group = "net.kyori", name = "adventure-nbt", version.ref = "adventure" }
+adventure-gson = { group = "net.kyori", name = "adventure-text-serializer-gson", version.ref = "adventure" }
+adventure-bungee = { group = "net.kyori", name = "adventure-platform-bungeecord", version.ref = "adventure-platform" }
+adventure-bukkit = { group = "net.kyori", name = "adventure-platform-bukkit", version.ref = "adventure-platform" }
+
+kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit", version.ref = "kotlin" }
+
+mongodb = { group = "org.mongodb", name = "mongo-java-driver", version.ref = "mongodb" }
+
+spigot_8 = { group = "org.spigotmc", name = "spigot", version.ref = "server_8" }
+
+protocollib = { group = "com.comphenix.protocol", name = "ProtocolLib", version.ref = "protocolLib" }
+
+scoreboardlibrary-api = { group = "net.megavex", name = "scoreboard-library-api", version.ref = "scoreboard-library" }
+scoreboardlibrary-impl = { group = "net.megavex", name = "scoreboard-library-implementation", version.ref = "scoreboard-library" }
+scoreboardlibrary-kotlin = { group = "net.megavex", name = "scoreboard-library-extra-kotlin", version.ref = "scoreboard-library" }
+scoreboardlibrary-packetevents = { group = "net.megavex", name = "scoreboard-library-packetevents", version.ref = "scoreboard-library" }
+scoreboardlibrary-18 = { group = "net.megavex", name = "scoreboard-library-v1_8_R3", version.ref = "scoreboard-library" }
+
+packetevents = { group = "com.github.retrooper.packetevents", name = "spigot", version.ref = "packetevents" }
+yamlassist = { group = "me.neznamy", name = "yamlassist", version.ref = "yamlassist" }
+
+gui = { group = "com.huanmeng-qwq", name = "Bukkit-Gui", version.ref = "gui" }
+
+jackson-kotlin = { group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin", version.ref = "jackson" }
+jackson-guava = { group = "com.fasterxml.jackson.datatype", name = "jackson-datatype-guava", version.ref = "jackson" }
+jackson-jdk8 = { group = "com.fasterxml.jackson.datatype", name = "jackson-datatype-jdk8", version.ref = "jackson" }
+jackson-jsr310 = { group = "com.fasterxml.jackson.datatype", name = "jackson-datatype-jsr310", version.ref = "jackson" }
+
+luckperms = { group = "net.luckperms", name = "api", version.ref = "luckperms" }
+
+moshi = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
+
+
+### thepit premiunm
+papi = { group = "me.clip", name = "placeholderapi", version.ref = "papi" }
+narshorn = { group = "org.openjdk.nashorn", name = "nashorn-core", version.ref = "narshorn" }
+httpclient = { group = "org.apache.httpcomponents", name = "httpclient", version.ref = "httpclient" }
+httpcore = { group = "org.apache.httpcomponents", name = "httpcore", version.ref = "httpclient" }
+jedis = { group = "redis.clients", name = "jedis", version.ref = "jedis" }
+book = { group = "xyz.upperlevel.spigot.book", name = "spigot-book-api", version.ref = "book" }
+mongojack = { group = "org.mongojack", name = "mongojack", version.ref = "monjack" }
+slf4j = { group = "org.slf4j", name = "slf4j-simple", version.ref = "slf4j" }
+websocket = { group = "org.java-websocket", name = "Java-WebSocket", version.ref = "websocket" }
+reflectionhelper = { group = "org.inventivetalent", name = "reflectionhelper", version.ref = "reflectionhelper" }
+playerpoints = { group = "org.black_ixx", name = "playerpoints", version.ref = "playerpoints" }
+decentholograms = { group = "com.github.decentsoftware-eu", name = "decentholograms", version.ref = "decentholograms" }
+hutool-core= {group="cn.hutool", name="hutool-core", version.ref="hutool"}
+hutool-crypto= {group="cn.hutool", name="hutool-crypto", version.ref="hutool"}
+litecommands = { group = "dev.rollczi", name = "litecommands-bukkit", version.ref = "litecommands" }
+[plugins]
+
+shadow = { id = "io.github.goooler.shadow", version.ref = "shadow" }
