@@ -105,10 +105,6 @@ public class ThePit extends JavaPlugin implements PluginMessageListener {
     private SoundFactory soundFactory;
     private PetFactory petFactory;
 
-    private PlayerPointsAPI playerPoints;
-    private LuckPerms luckPerms;
-
-
     private PointsAPI pointsAPI;
 
 
@@ -144,6 +140,7 @@ public class ThePit extends JavaPlugin implements PluginMessageListener {
 
         this.loadConfig();
         this.loadDatabase();
+        this.loadListener();
         PitMain.start();
         this.loadMenu();
         this.loadNpc();

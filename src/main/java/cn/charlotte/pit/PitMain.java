@@ -9,7 +9,6 @@ public class PitMain {
 
     public static void start() {
         Bukkit.getScheduler().runTask(ThePit.getInstance(), () -> {
-            ThePit.getInstance().loadListener();
             ThePit.setApi(PitInternalImpl.INSTANCE);
             hook = PitHook.INSTANCE;
             hook.init();
