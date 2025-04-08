@@ -6,7 +6,7 @@ plugins {
 }
 
 val pluginName = "ThePitPremium"
-val version = "3.92"
+val version = "3.93"
 repositories {
     maven("https://maven.aliyun.com/repository/public/")
     mavenCentral()

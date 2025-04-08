@@ -419,22 +419,20 @@ class SquadsEvent : IEpicEvent, IEvent, IPrepareEvent, Listener, IScoreBoardInse
             val players = location.world.getNearbyEntities(location, 3.0, 3.0, 3.0)
                 .filterIsInstance<Player>()
 
-//            if (this.capturedTeam != null) {
-            val teams = HashSet<TeamData>()
-            var otherTeamContains = false
+            val teams = mutableSetOf<TeamData>()
+            var isOtherTeamPresent = false
 
             for (player in players) {
                 val teamData = event.teamMap[player.uniqueId] ?: continue
                 teams.add(teamData)
-
-                if (event.teamMap[player.uniqueId] != this.capturedTeam) {
-                    otherTeamContains = true
+                if (teamData != this.capturedTeam) {
+                    isOtherTeamPresent = true
                 }
             }
 
             if (teams.size > 1) {
                 this.bannerStatus = BannerStatus.FIGHTING
-            } else if (otherTeamContains && teams.size > 0) {
+            } else if (isOtherTeamPresent && teams.isNotEmpty()) {
                 val capturingTeam = teams.first()
                 if (this.capturingTeam != capturingTeam) {
                     this.capturingTeam = capturingTeam
@@ -445,25 +443,20 @@ class SquadsEvent : IEpicEvent, IEvent, IPrepareEvent, Listener, IScoreBoardInse
 
                 if (capturingState > 5) {
                     Bukkit.getScheduler().runTask(ThePit.getInstance()) {
-                        val state = this.location.block.state
-                        val banner = state as org.bukkit.block.Banner
-                        banner.baseColor = DyeColor.getByDyeData(chatColorToData[capturingTeam.chatColor]!!.toByte())
-                        banner.update(true, false)
+                        val state = this.location.block.state as org.bukkit.block.Banner
+                        state.baseColor = DyeColor.getByDyeData(chatColorToData[capturingTeam.chatColor]!!.toByte())
+                        state.update(true, false)
                     }
 
-                    val first = players.first()
-                    val gotPlayer =
-                        PlayerProfile.getPlayerProfileByUuid(first.uniqueId).formattedLevelTag
+                    val gotPlayer = PlayerProfile.getPlayerProfileByUuid(players.first().uniqueId).formattedLevelTag
 
-                    capturedTeam?.let {
-                        for (player in it.players) {
-                            Bukkit.getPlayer(player.playerUuid)?.sendMessage(
-                                CC.translate("&b&l夺旗! &c-&c&l旗帜&a! &7被 $gotPlayer &7偷走了一面旗帜!")
-                            )
-                        }
+                    capturedTeam?.players?.forEach { player ->
+                        Bukkit.getPlayer(player.playerUuid)?.sendMessage(
+                            CC.translate("&b&l夺旗! &c-&c&l旗帜&a! &7被 $gotPlayer &7偷走了一面旗帜!")
+                        )
                     }
 
-                    for (player in capturingTeam.players) {
+                    capturingTeam.players.forEach { player ->
                         Bukkit.getPlayer(player.playerUuid)?.sendMessage(
                             CC.translate("&b&l夺旗! &a+&a&l旗帜&a! &7${gotPlayer} &7拿到了一面旗帜!")
                         )
@@ -479,6 +472,7 @@ class SquadsEvent : IEpicEvent, IEvent, IPrepareEvent, Listener, IScoreBoardInse
                     setCapturedHologram()
 
                     capturingTeam.banners.add(this)
+
                     Bukkit.getScheduler().runTask(ThePit.getInstance()) {
                         val firework = BoomFirework((location.world as CraftWorld).handle)
                         val meta = (firework.bukkitEntity as Firework).fireworkMeta
@@ -499,12 +493,11 @@ class SquadsEvent : IEpicEvent, IEvent, IPrepareEvent, Listener, IScoreBoardInse
                 this.capturingState = 0
                 this.capturingTeam = null
                 this.bannerStatus = BannerStatus.CAPTURED
-                this.capturedTeam?.score = this.capturedTeam!!.score + (min(
-                    4,
-                    max(2, (System.currentTimeMillis() - this.capturedStartAt) / (1000 * 60L)).toInt()
-                ))
+                this.capturedTeam?.score = this.capturedTeam!!.score + min(
+                    4, max(2, ((System.currentTimeMillis() - this.capturedStartAt) / (1000 * 60L)).toInt())
+                )
             }
-//            }
+
             refreshBannerHolograms()
         }
 

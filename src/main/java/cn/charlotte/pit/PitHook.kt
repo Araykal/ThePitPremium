@@ -637,7 +637,7 @@ object PitHook {
             DamagePlus::class.java,
             QuickMathEvent::class.java,
             KingOfTheHillEvent::class.java,
-            /*         SquadsEvent::class.java*/
+                   SquadsEvent::class.java
         )
 
         eventFactory.init(classes)

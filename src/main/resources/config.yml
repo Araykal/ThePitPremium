@@ -1,5 +1,4 @@
-#授权码
-auth-code: 'xxxx'
+
 service:
   mongodb:
     ip: 127.0.0.1
