@@ -1,0 +1,291 @@
+player命令:
+# /option, options, opt, setting, settings
+- 打开设置界面，等级限制 5 级。
+
+# /trade <玩家>
+- 与指定玩家进行交易，等级限制 60 级。
+
+# /view <玩家>
+- 查看指定玩家档案，等级限制 70 级，精通限制 1 级。
+
+# /tradeLimits
+- 查看个人今日交易上限情况。
+
+# /respawn, spawn, home, back
+- 回到主城。
+
+# /killRecap
+- 查看个人死亡回放。
+
+# /cdk <兑换码>
+- 使用给定的兑换码领取奖励。
+
+# /offer <玩家> <出价>
+- 向指定玩家发送交易报价，对方同意则交易成功，等级限制 60 级。
+- 该功能计入每日交易上限。
+
+# /viewOffer <玩家>
+- 查看指定玩家发送给指令发送者的交易报价，等级限制 60 级。
+- 该功能计入每日交易上限。
+
+-------------------------------------------------------------------------------
+
+thepitvip命令:
+# /events
+- 查看未来将刷新的事件, 需要天坑会员。
+
+# /show
+- 展示手中物品，需要天坑会员。
+
+-------------------------------------------------------------------------------
+
+admin命令：
+# /rename 
+- 自定义武器名字 (pit.rename)
+
+# /pitadmin reload
+- 支持config.yml重载(数据库不支持)
+
+# /resetKingsQuests 
+- 重置全服国王任务
+
+# /forceTrade <玩家>
+- 强制与指定玩家进行交易。
+
+# /giveSupporter <玩家>
+- 为指定玩家添加会员身份。
+
+# /takeSupporter <玩家>
+- 移除指定玩家的会员身份。
+
+# /setLocCurrency <参数>
+- 待补充。
+
+# /kaboom
+- 击飞所有玩家。
+
+# /openMenu <菜单>
+shop/商店
+perkBuy/天赋购买
+prestigePerkBuy/精通天赋购买
+prestige/精通
+ench/神话之井
+quest/任务
+mail/邮箱
+cdk/兑换码
+allCdk/所有兑换码
+
+# /event <事件>  开始事件 
+package/空投
+qm/速算
+100g/全员通缉
+cake/蛋糕
+auction/拍卖
+rvb/红蓝大战
+hamburger/外卖
+spire/尖塔夺魁
+squads/旗帜争夺战
+bh/方块划地战
+koth/占山为王
+rage/疯狂天坑
+# /event cancel 取消事件
+
+# /ench
+- 手持装备打开 Admin 神话之井。
+
+# /pi
+- 打开 Admin 物品界面。
+
+# /reboot <计划时间> <原因> 
+- 添加一个服务器计划重启任务。
+
+# /wipe <玩家> <原因>
+- 清除数据
+
+# /unwipe <玩家>
+- 还原数据
+
+# /rollback <玩家>
+- 查看指定玩家的背包备份。
+
+# /forceSpawn <玩家>
+- 强制使指定玩家重生。
+
+# /deleteFile <文件路径>
+- 删除指定路径的文件。
+
+# /disablePlugin <插件>
+- 卸载指定插件。
+
+# /refreshEvents
+- 刷新事件计算。
+
+# /debug medal
+- 待补充。
+
+# /pitAdmin giveItemInHand <玩家>
+- 将手中物品给予指定玩家。
+
+# /pitAdmin loc
+- 以格式化返回当前所在的位置信息。
+
+# /pitadmin edit, edit
+- 切换地图建筑模式。
+
+# /pitadmin drop
+- Drop 数据库，需要至少 3 位在线管理员共同确认。
+- 危险命令，未经共同商讨的任何情况下请勿使用。
+
+# /pitAdmin change <玩家> <> <>
+硬币/coin
+精通/prestige
+声望/renown
+等级/level
+赏金/bounty
+最大生命值/maxhealth
+连杀/streak
+abounty
+- (待补充) 
+
+# /pitAdmin changeItemInHand <?>
+- 修改手中神话装备的当前生命。
+
+# /pitAdmin changeItemInHand <?>
+- 修改手中神话装备的最大生命。
+
+--------------------------------------------------------------------------------------
+
+游戏内设置:
+NPC类：(共10个)
+# /pitAdmin keeperLoc
+- (待补充) 设定所在的位置为 返回大厅NPC 所在位置。
+
+# /pitAdmin mail
+- 设定当前所在的位置为 邮件 NPC 所在位置。
+
+# /pitAdmin genesisDemonLoc
+- 设定当前所在的位置为 天使 NPC 所在位置。
+
+# /pitAdmin genesisAngelLoc
+- 设定当前所在的位置为 恶魔 NPC 所在位置。
+
+# /pitAdmin shopNpc
+- 设定当前所在的位置为 商店 NPC 所在位置。
+
+# /pitAdmin perkNpc
+- 设定当前所在的位置为 天赋 NPC 所在位置。
+
+# /pitAdmin prestigeNpc
+- 设定当前所在的位置为 精通 NPC 所在位置。
+
+# /pitAdmin statusNpc
+- 设定当前所在的位置为 资料 NPC 所在位置。
+
+# /pitadmin quest
+- 设定当前所在的位置为 任务 NPC 所在位置。
+
+# /pitadmin leadernpc
+- 设定当前所在的位置为 排行榜助手 NPC 所在位置。
+
+全息图类：(共5个)
+# /pitAdmin hologramLoc
+- 设定当前所在的位置为 天坑乱斗 全息图显示位置。
+
+# /pitadmin leaderHologram
+- 设定当前所在的位置为 排行榜 全息图显示位置。
+
+# /pitadmin helperHolo
+- 设定当前所在的位置为 帮助 全息图显示位置。
+
+# /pitadmin chesthologram
+- 设定当前所在的位置为 末影箱 全息图显示位置。
+
+# /pitadmin mythicHologram
+- 设定当前所在的位置为 附魔台 全息图显示位置。
+
+游戏基础设置：
+# /pitadmin pitLoc <点位: a/b>
+- 设定天坑保护区域的 a, b 点位。
+
+# /pitadmin table
+- 设定当前准星对准的附魔台方块为 神话之井 所在位置。
+
+# /pitAdmin addSpawn （可多设置）
+- 设定当前所在的位置为可能的玩家出生/重生位置。
+
+# /pitAdmin setkothloc
+- 设置 占山为王的 生成路径
+
+# /addbhLoc
+- 方块划地战增加buff点位
+
+# /addSquadsLoc
+- 旗帜争夺战增加旗帜点位
+
+# /addangelspawns
+- 增加天使出生点
+
+# /adddemonspawns
+- 增加恶魔出生点
+
+# /addPackagePoin (换图需要先删除原有的点位)
+- 增加空投点位
+
+# /openkingsquestui 
+- 国王NPC绑定命令(以OP执行)
+# /openBakeMaster
+- 烘焙NPC绑定命令(以OP执行)
+
+# /addSewersPoint
+- 增加下水道箱子刷新点位
+
+以下config事件内容:
+#疯狂天坑事件
+rage:
+  middle: world|0.5|120.0|0.5|0.0|0.0 #中心点位置，用于确认牢笼的中心
+  radius: 23 #半径，圈玩家的玻璃的半径，需要把玩家圈在中心不能跑到别的地方去，设置合理即可
+  height: 256 #高度 这个牢笼高度 一般不用改
+  
+#蛋糕事件
+cake: #Abcd四个点位随机一个，posA和posB则为对角线
+  a:
+    posA: world|5.5|63.0|-73.5|0.0|0.0
+    posB: world|-3.5|67.0|-81.5|0.0|0.0
+  b:
+    posA: world|88.5|67.0|-7.5|0.0|0.0
+    posB: world|94.5|63.0|0.5|0.0|0.0
+  c:
+    posA: world|9.5|67.0|73.5|0.0|0.0
+    posB: world|2.5|63.0|65.5|0.0|0.0
+  d:
+    posA: world|-97.5|63.0|3.5|0.0|0.0
+    posB: world|-89.5|67.0|-5.5|0.0|0.0
+#天坑外卖
+hamburger:
+  shop: world|0.0|43.0|0.0|0.0|0.0 #(需手动配置，设置商店位置, 可以设置在坑中心，玩家容易找到就行)
+  villager:
+    a:
+    - world|-13.5|63.0|48.5|197.05042|1.4316756
+    - world|23.5|61.0|41.5|153.70157|0.9269122
+    a-offer: world|0.0|43.0|0.0|0.0|0.0 #(需手动配置，设置商店位置, 可以设置在坑中心，玩家容易找到就行)
+# /pitadmin ham clear a 
+- 使用这个指令 先清除所有已有的村民点位
+# /pitadmin ham a 
+- 添加当前位置为一个村民点，大概一张图放30个村民差不多，必须大于20个，分散分布就行
+
+#尖塔夺魁
+portal:
+  posA: world|-2.5|60.0|3.5|0.0|0.0
+  posB: world|3.5|60.0|-2.5|0.0|0.0
+- 传送进塔的对角线, 确保y一致，y不一致可能导致玩家客户端卡顿
+
+#关于装备附魔属性
+- 比如 用/ench附魔，附出来的是 III阶武器 1级属性
+- 如果你想要I阶武器 3级属性附魔 可以使用 Infinity 修改NBT 
+- {ench:[{lvl:1s,id:62s}],Unbreakable:1b,HideFlags:63,extra:{ench:["billionaire:3"],internal:"mythic_sword",records:"ChaoJiShenGod|管理员ench|1737237439342;ChaoJiShenGod|管理员ench|1737237473492;ChaoJiShenGod|管理员ench|1737237473692",boostedByBook:0b,mythic_color:"green",tradeAllow:0b,removeOnJoin:0b,boostedByGem:0b,enderChest:1b,uuid:"42337063-0651-4a11-8946-29d695175e80",canTrade:1b,boostedByGlobalGem:0b,tier:3,deathDrop:0b,maxLive:22,live:22},display:{Lore:["§7生命: §a22§7/22","","§d稀有! §9亿万富翁 III§r","§7§7攻击造成的伤害 §c+105% ","§7§7但每次使用扣除自身 §6350 硬币"," ","§aClover §fPiexl"],Name:"§cIII 阶神话之剑"},AttributeModifiers:[{UUIDMost:2872,UUIDLeast:894654,Amount:6.5d,AttributeName:"generic.attackDamage",Operation:0,Name:"generic.attackDamage"}]}
+- tier:3 #1-3 = 1-3阶
+- {ench:["billionaire:3"] #1-3 属性附魔
+
+
+
+#2025年1月19日 06:08:44 by ChaoJiShenGod

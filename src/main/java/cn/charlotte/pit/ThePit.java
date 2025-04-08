@@ -175,7 +175,6 @@ public class ThePit extends JavaPlugin implements PluginMessageListener {
         this.miniGameController = new MiniGameController();
         this.miniGameController.runTaskTimerAsynchronously(this, 1, 1);
 
-        new ScheduledThreadPoolExecutor(1).scheduleWithFixedDelay(new AutoSaveRunnable(), 1, 1, TimeUnit.MINUTES);
         new DayNightCycleRunnable().runTaskTimerAsynchronously(this, 20, 20);
         new Thread(new LeaderBoardRunnable(this)).start();
         try {

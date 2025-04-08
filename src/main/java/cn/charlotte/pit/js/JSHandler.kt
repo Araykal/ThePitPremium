@@ -7,7 +7,6 @@ import cn.charlotte.pit.data.PlayerProfile
 import cn.charlotte.pit.enchantment.rarity.EnchantmentRarity
 import cn.charlotte.pit.enchantment.type.JSEnchantment
 import cn.charlotte.pit.enchantmentInt
-import cn.charlotte.pit.util.AddonUtil
 import cn.charlotte.pit.util.chat.CC
 import jdk.dynalink.beans.StaticClass
 import jdk.nashorn.api.scripting.ScriptObjectMirror
@@ -41,16 +40,6 @@ object JSHandler {
     private var version = 0
 
     fun load() {
-
-//        if (AddonUtil.check("js")) {
-//            version = 5
-//            println("Loading addon js...")
-//        }
-//        if (version != 2.0.pow(2).toInt() + 1) {
-//            return
-//        }
-
-
         val jsDir = File(ThePit.getInstance().dataFolder, "js")
         if (!jsDir.exists()) {
             jsDir.mkdir()

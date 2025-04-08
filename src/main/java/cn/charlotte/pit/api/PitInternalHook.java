@@ -58,8 +58,6 @@ public interface PitInternalHook {
 
     List<AbstractEnchantment> musicEnchantments();
 
-    boolean checkIsAddon(String addon);
-
     String getWaterMark();
 
     String getBotName();

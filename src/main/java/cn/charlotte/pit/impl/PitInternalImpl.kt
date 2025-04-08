@@ -29,7 +29,6 @@ import cn.charlotte.pit.menu.genesis.GenesisMenu
 import cn.charlotte.pit.menu.heresy.HeresyMenu
 import cn.charlotte.pit.menu.main.AuctionMenu
 import cn.charlotte.pit.menu.shop.ShopMenu
-import cn.charlotte.pit.util.AddonUtil
 import cn.charlotte.pit.util.DecentHologramImpl
 import cn.charlotte.pit.util.Utils
 import cn.charlotte.pit.util.chat.CC
@@ -301,9 +300,6 @@ object PitInternalImpl : PitInternalHook {
         return music
     }
 
-    override fun checkIsAddon(addon: String): Boolean {
-        return AddonUtil.check(addon)
-    }
 
     override fun getWaterMark(): String {
         return CC.translate(NewConfiguration.waterMark)

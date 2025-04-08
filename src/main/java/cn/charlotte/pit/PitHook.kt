@@ -644,28 +644,9 @@ object PitHook {
     }
 
     private fun registerListeners() {
-//        val classes = mutableListOf<Class<*>>(
-//            CombatListener::class.java, GameEffectListener::class.java,
-//            DataListener::class.java, EnderChestListener::class.java,
-//            ChatListener::class.java, PlayerListener::class.java,
-//            ProtectListener::class.java, PantsBundleShopButton::class.java,
-//            SwordBundleShopButton::class.java, BowBundleShopButton::class.java,
-//            CombatSpadeShopButton::class.java
-//        )
-//        for (aClass in classes) {
-//            try {
-//                val o = aClass.getDeclaredConstructor().newInstance()
-//                Bukkit.getPluginManager().registerEvents(o as Listener, ThePit.getInstance())
-//            } catch (e: Exception) {
-//                e.printStackTrace()
-//            }
-//        }
-
         ProtocolLibrary.getProtocolManager().addPacketListener(PacketListener())
-
         if (Bukkit.getPluginManager().getPlugin("MythicMobs") != null) {
             Bukkit.getPluginManager().registerEvents(MythicMobListener, ThePit.getInstance());
-            println("加载MM支持")
         }
     }
 
